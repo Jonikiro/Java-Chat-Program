@@ -26,6 +26,7 @@ A separate method is responsible for the networking. It creates a new Socket whi
 While the networking method is responsible for establishing those connections, the implementations of ActionListener and Runnable are responsible for using them. The first uses the PrintWriter to get any text entered by the user in the TextField and print it to the output stream. The latter utilizes a new Thread set up beforehand to listen to any incoming requests from the server and append data from them to the TextArea for display in real time.
 
 **SERVER SIDE MODULE**
+
 The VerySimpleChatServer module is responsible for accepting connections from multiple chat clients and handling the data received from them simultaneously using multiple Threads to do so. To accomplish this, the module does four things: Establish a ServerSocket which listens for incoming requests on port 5000, initialize a new Thread to handle each incoming client Socket, add to an ArrayList which will hold PrintWriters initialized for each client Socket, and iterate through those PrintWriters so that each time data is received by the server, it will be printed back to every client via their own connection.
 
 The ServerSocket is initialized to listen to incoming requests on port 5000. When that ServerSocket accepts an incoming request, it initializes a new Socket with the incoming client Socket and chains its OutputStream to a new PrintWriter. It adds that PrintWriter to an ArrayList, which we'll cover shortly.
