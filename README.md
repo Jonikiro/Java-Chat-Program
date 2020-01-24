@@ -34,4 +34,5 @@ The ServerSocket is initialized to listen to incoming requests on port 5000. Whe
 A new Thread is initialized which will handle the InputStream from this client Socket by initializing an InputStreamReader/BufferedReader combination. Data processed through those Readers is then used by every PrintWriter to print said data back through every client's OutputStream to be displayed on their end.
 
 **CONCLUSION**
+
 While this is a small program designed to be run on a single computer, future updates to this program will focus on making the server more robust and possibly extending functionality to run over multiple computers. Thank you for your interest.
